@@ -8,13 +8,16 @@ namespace NW\WebService\References\Operations\Notification;
 class Contractor
 {
     const TYPE_CUSTOMER = 0;
-    public $id;
-    public $type;
-    public $name;
+    public int $id;
+    public int $type;
+    public string $name;
 
-    public static function getById(int $resellerId): self
+    public string $email;
+    public string $mobile;
+
+    public static function getById(int $resellerId): ?static
     {
-        return new self($resellerId); // fakes the getById method
+        return new static($resellerId); // fakes the getById method
     }
 
     public function getFullName(): string
